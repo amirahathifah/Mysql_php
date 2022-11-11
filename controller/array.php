@@ -14,25 +14,27 @@
 //             [2] => 1375770
 //         )
 // )
+
+//remove array element
 foreach($files_name as $k => $val)
 {
-    if($k == 2) 
+    if($total_deletes > 1)
     {
-        unset($files_name[$k]);
-    }
-}
-
-foreach($file as $k => $each_file)
-{
-    foreach($each_file as $q => $value)
-    {
-        if($q == 2) 
+        for($j=0 ; $j < $total_deletes-1 ; $j++)
         {
-            unset($each_file[$q]);
+            if($k == $deletes[$j])
+            {
+                unset($files_name[$k]);
+            }
         }
     }
-    //print_r($each_file);
 }
+foreach($files_name as $i => $each_file)
+{
+    $fileName = $_FILES['image']['name'][$i];
+    echo $fileName;
+}
+            
 foreach($file as $k => $each_file)
 {
     foreach($each_file as $q => $value)
