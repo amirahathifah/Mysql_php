@@ -16,26 +16,20 @@
 // )
 foreach($files_name as $k => $val)
 {
-    //012
-    pr(array_keys($files_name));
-
-    //namesize
-    echo $val;
-
     if($k == 2) 
     {
-        //pixabay.jpg
-        echo $val;
+        unset($files_name[$k]);
     }
 }
- foreach($file as $k => $each_file)
+
+foreach($file as $k => $each_file)
 {
-    //pr(array_keys($val)); //012
-    foreach($each_file as $q => $val)
+    foreach($each_file as $q => $value)
     {
         if($q == 2) 
         {
-            echo $val; //pixabay.jpgimage/jpegC:\xampp\tmp\phpE0B0.tmp01375770
+            unset($each_file[$q]);
         }
     }
+    //print_r($each_file);
 }
