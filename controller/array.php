@@ -33,3 +33,20 @@ foreach($file as $k => $each_file)
     }
     //print_r($each_file);
 }
+foreach($file as $k => $each_file)
+{
+    foreach($each_file as $q => $value)
+    {
+        if($total_deletes > 1)
+        {
+            for($j=0 ; $j < $total_deletes-1 ; $j++) //default = 1,minus 1
+            {
+                if($q == $deletes[$j])
+                {
+                    unset($each_file[$q]);
+                }
+            }
+        }
+    }
+    mpr($each_file);
+}
